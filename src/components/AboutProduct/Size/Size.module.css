@@ -1,0 +1,25 @@
+.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.block {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    width: 63px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #1d1f22;
+    cursor: pointer;
+}
+
+.block:hover {
+    border: 1px solid #1d1f22;
+    color: #fff;
+    background: #1D1F22;
+}

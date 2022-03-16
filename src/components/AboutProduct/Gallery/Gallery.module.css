@@ -1,0 +1,30 @@
+.gallery {
+    display: flex;
+}
+
+.newGallery {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.photo,
+.selectedPhoto {
+    width: 80px;
+    height: 80px;
+    border: 2px solid transparent;
+    margin-bottom: 8px;
+}
+
+.photo:hover {
+    border: 2px solid #5ece7c6e;
+}
+
+.selectedPhoto {
+    border: 2px solid #5ece7b;
+}
+
+.largePhoto {
+    width: 610px;
+    height: 80%;
+    object-fit: contain;
+}

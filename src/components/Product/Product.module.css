@@ -1,3 +1,12 @@
+.link {
+    text-decoration: none;
+    margin-bottom: 103px;
+}
+
+.link:hover {
+    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+}
+
 .wpar, .outOfStock {
     border: 15px solid #fff;
 }

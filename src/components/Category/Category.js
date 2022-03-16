@@ -1,5 +1,5 @@
-import React from "react";
 import { useQuery } from "@apollo/client";
+import React from "react";
 import s from "./Category.module.css";
 import { GET_ALL_CATEGORIES } from "../Header/queriesHeader";
 import { NavLink } from "react-router-dom";
