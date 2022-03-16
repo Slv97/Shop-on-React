@@ -1,0 +1,36 @@
+.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+    background: #5ece7b;
+    font-weight: 600;
+    line-height: 120%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    border: 2px solid transparent;
+    margin: 20px 0 40px 0;
+}
+
+.middle {
+    font-size: 16px;
+    margin: 20px 0 40px 0;
+    padding: 16px 94px;
+}
+
+.small {
+    font-size: 14px;
+}
+
+.btn:hover {
+    background: #ffffff;
+    color: #5ece7b;
+    border: 2px solid #5ece7b;
+}

@@ -1,0 +1,21 @@
+.category {
+    cursor: pointer;
+}
+
+.category,
+.active {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 120%;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 28px 16px 32px 16px;
+    border-bottom: 1px solid #fff;
+    text-decoration: none;
+}
+
+.active {
+    color: #5ece7b;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #5ece7b;
+}

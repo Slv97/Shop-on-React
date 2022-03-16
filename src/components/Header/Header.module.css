@@ -10,24 +10,9 @@
     align-items: center;
 }
 
-.category, .currencyWrap, .cart {
+.currencyWrap,
+.cart {
     cursor: pointer;
-}
-
-.category {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 120%;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 28px 16px 32px 16px;    
-    border-bottom: 1px solid #fff;
-}
-
-.category:hover {
-    color: #5ece7b;
-    padding-bottom: 32px;
-    border-bottom: 1px solid #5ece7b;
 }
 
 .currency {
