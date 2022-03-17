@@ -25,6 +25,7 @@
 
 .largePhoto {
     width: 610px;
-    height: 80%;
+    height: 50%;
     object-fit: contain;
+    margin: 0 40px 0 0;
 }

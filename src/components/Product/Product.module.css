@@ -3,12 +3,39 @@
     margin-bottom: 103px;
 }
 
-.link:hover {
+.wrap {
+    position: relative;
+}
+
+.outOfStock {
+    color: #8d8f9a;
+    opacity: 0.5;
+    position: relative;
+    cursor: not-allowed;
+}
+
+.wrap,
+.outOfStock {
+    border: 15px solid #fff;
+}
+
+.wrap:hover,
+.outOfStock:hover {
     box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
 }
 
-.wpar, .outOfStock {
-    border: 15px solid #fff;
+.wrap:hover::after {
+    content: "";
+    position: absolute;
+    right: 31px;
+    bottom: 72px;
+    width: 52px;
+    height: 52px;
+    background-color: #5ece7b;
+    border-radius: 50%;
+    background-image: url(../../assets/images/WhiteCart.svg);
+    background-repeat: no-repeat;
+    background-position: 50%;
 }
 
 .photo {
@@ -30,18 +57,11 @@
     line-height: 160%;
 }
 
-.outOfStock {
-    color: #8d8f9a;
-    opacity: 0.5;    
-    position: relative;
-    cursor: not-allowed;
-}
-
 .mesOutOfStock {
     font-weight: 400;
     font-size: 24px;
     line-height: 160%;
     text-transform: uppercase;
-    position: absolute; 
+    position: absolute;
     transform: translateY(450%) translateX(50%);
 }

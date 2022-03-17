@@ -32,9 +32,30 @@
     line-height: 18px;
 }
 
-.description > p {
+.description,
+.description p,
+.description h3,
+.description h1,
+.description ul,
+.description div ul  li span {
     font-family: "Roboto", sans-serif;
+    line-height: 159.96%;
+}
+
+.description,
+.description p {
     font-weight: 400;
     font-size: 16px;
-    line-height: 159.96%;
+    margin-bottom: 18px;
+    text-align: justify;
+}
+
+.description h3,
+.description h1 {
+    margin-bottom: 4px;
+    line-height: 40px;
+}
+
+.description div ul  li {
+    margin-bottom: 6px;
 }

@@ -30,14 +30,3 @@ const Gallery = ({ gallery }) => {
 
 export default Gallery;
 
-// const Gallery = ({ gallery }) => {
-//     let photo = gallery.map((photo) => (
-//         <div><img src={photo} alt="photo" className={s.photo} /></div>
-//     ));
-
-//     console.log("photo", photo);
-
-//     return <>{photo}</>;
-// };
-
-// export default Gallery;

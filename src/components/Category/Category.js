@@ -4,18 +4,14 @@ import s from "./Category.module.css";
 import { GET_ALL_CATEGORIES } from "../Header/queriesHeader";
 import { NavLink } from "react-router-dom";
 import Preloader from "../Preloader/Preloader";
+import NotFoundPage from "../NotFoundPage/NotFoundPage";
 
 const Category = () => {
     const { loading, error, data } = useQuery(GET_ALL_CATEGORIES);
 
     if (loading) return <Preloader />;
-    if (error) return <p>Err</p>;
-
-    // let dataA = {
-    //     categories: [{ name: "all" }, { name: "tech" }],
-    // };
-    // console.log("dataA", data);    
-
+    if (error) return <NotFoundPage />;
+  
     const setActive = ({ isActive }) => (isActive ? s.active : s.category);
 
     let category = data.categories.map((category) => (
