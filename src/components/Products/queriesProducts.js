@@ -7,8 +7,19 @@ query{
       products {
          id
         name
+        brand
         inStock
         gallery
+        attributes {
+          id
+          name
+          type
+          items {
+            displayValue
+            value
+            id
+          }
+        }
         prices {
           currency {
             symbol

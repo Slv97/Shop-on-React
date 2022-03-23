@@ -1,0 +1,26 @@
+.currencyWrap,
+.cart,
+.quantity {
+    cursor: pointer;
+}
+
+.currency {
+    margin-right: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 160%;
+}
+
+.more {
+    margin-right: 22px;
+}
+
+.cartWrap {
+    position: relative;
+}
+
+.quantity {
+    position: absolute;
+    right: -14px;
+    top: -8px;
+}

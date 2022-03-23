@@ -1,0 +1,1 @@
+export const useCalcTotalPrice = items => items.reduce((acc, product) => acc += product.prices[0].amount, 0).toFixed(2)

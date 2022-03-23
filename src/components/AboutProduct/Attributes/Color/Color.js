@@ -1,11 +1,17 @@
+import { useState } from "react";
+import {useLocalStorage} from "../../../../utils/useLocalStorage";
 import s from "../Attributes.module.css";
 
 const Color = ({ color }) => {
-    let newColor = color.items.map((c) => (
+    const [selectedColor, setSelectedColor] = useLocalStorage(color.id, '');  
+
+       
+    let newColor = color.items.map((color) => (
         <div
-            className={s.blockColor}
-            style={{ "--color": c.value }}
-            key={c.id}
+            className={selectedColor === color ? s.selectedBlockColor : s.blockColor}
+            style={{ "--color": color.value }}
+            key={color.id}
+            onClick={() => setSelectedColor(color)}
         ></div>
     ));
 

@@ -1,3 +1,10 @@
+.positionSticky {
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    background-color: #fff;
+}
+
 .wrap {
     margin-bottom: 80px;
 }
@@ -10,18 +17,3 @@
     align-items: center;
 }
 
-.currencyWrap,
-.cart {
-    cursor: pointer;
-}
-
-.currency {
-    margin-right: 10px;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 160%;
-}
-
-.more {
-    margin-right: 22px;
-}

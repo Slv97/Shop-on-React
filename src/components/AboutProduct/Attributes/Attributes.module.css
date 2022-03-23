@@ -15,6 +15,7 @@
 }
 
 .block,
+.selectedBlockColor,
 .blockColor {
     font-weight: 400;
     font-size: 16px;
@@ -29,6 +30,17 @@
     margin: 0 12px 12px 0;
 }
 
-.blockColor {
+.blockColor,
+.selectedBlockColor {
     background: var(--color);
+}
+
+.block:hover {
+    border: 1px solid #1d1f22;
+    color: #fff;
+    background: #1D1F22;
+}
+
+.selectedBlockColor {
+    border: 5px solid #5ECE7B;
 }

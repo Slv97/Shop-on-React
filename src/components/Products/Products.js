@@ -7,6 +7,7 @@ const Products = ({ data }) => {
     let product = data.category.products.map((product) => (
         <Product
             key={product.id}
+            product={product}
             id={product.id}
             name={product.name}
             photo={product.gallery[0]}

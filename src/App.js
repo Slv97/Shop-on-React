@@ -7,36 +7,26 @@ import PageClothes from "./components/Pages/PageClothes";
 import PageTech from "./components/Pages/PageTech";
 import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 import AboutProduct from "./components/AboutProduct/AboutProduct";
+import { Provider } from "react-redux";
+import { store } from "./redux";
 
 const App = () => {
     return (
-        <div className="container">
-            <Routes>
-                <Route path="/" element={<Layout />}>
-                    <Route index element={<PageAll />} />
-                    <Route path="all" element={<PageAll />} />
-                    <Route path="all/:id" element={<AboutProduct />} />
-                    <Route path="clothes" element={<PageClothes />} />
-                    <Route path="tech" element={<PageTech />} />
-                    <Route path="*" element={<NotFoundPage />} />
-                </Route>
-            </Routes>
-        </div>
+        <Provider store={store}>
+            <div className="container">
+                <Routes>
+                    <Route path="/" element={<Layout />}>
+                        <Route index element={<PageAll />} />
+                        <Route path="all" element={<PageAll />} />
+                        <Route path="all/:id" element={<AboutProduct />} />
+                        <Route path="clothes" element={<PageClothes />} />
+                        <Route path="tech" element={<PageTech />} />
+                        <Route path="*" element={<NotFoundPage />} />
+                    </Route>
+                </Routes>
+            </div>
+        </Provider>
     );
 };
 
 export default App;
-
-// class App extends React.Component {
-//     render() {
-//         return (
-//             <div className="container">
-//                 <div>
-//                     <PageAll />
-//                     <PageClothes />
-//                     <PageTech />
-//                 </div>
-//             </div>
-//         );
-//     }
-// }

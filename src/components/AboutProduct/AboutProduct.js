@@ -1,13 +1,16 @@
-import Btn from "../Btn/Btn";
-import s from "./AboutProduct.module.css";
 import { useParams } from "react-router-dom";
-import { useQuery } from "@apollo/client";
 import Preloader from "../Preloader/Preloader";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
+
+import { useQuery } from "@apollo/client";
 import { GET_ABOUT_PRODUCT } from "./queriesAboutProduct";
-import Gallery from "./Gallery/Gallery";
+
+// import Btn from "../Btn/Btn";
 // import Size from "./Size/Size";
+import Gallery from "./Gallery/Gallery";
 import Attributes from "./Attributes/Attributes";
+import AddCard from "./AddCard/AddCard";
+import s from "./AboutProduct.module.css";
 
 const AboutProduct = () => {
     const { id } = useParams();
@@ -23,7 +26,7 @@ const AboutProduct = () => {
         return { __html: data.product.description };
     }
 
-    // console.log("data", data.product.attributes);
+    console.log("data", data.product);
 
     return (
         <>
@@ -47,7 +50,7 @@ const AboutProduct = () => {
                         </div>
                     </div>
 
-                    <Btn text="add to cart" to="" />
+                    <AddCard product={data.product} />
 
                     <div
                         className={s.description}

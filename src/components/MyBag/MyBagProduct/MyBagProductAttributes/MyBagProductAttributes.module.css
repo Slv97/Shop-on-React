@@ -1,0 +1,22 @@
+.wrap {
+    display: flex;
+    align-items: center;
+}
+
+.text {
+    display: inline-block;
+    padding: 4px;
+    border: 1px solid #1d1f22;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    margin: 25px 8px 8px 0;
+    width: 41px;
+    height: 33px;
+    text-align: center;
+}
+
+.color {
+    background: var(--color);
+    
+}
