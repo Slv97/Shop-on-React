@@ -1,0 +1,23 @@
+.wrap {
+    cursor: pointer;
+}
+
+.currency {
+    margin-right: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 160%;
+}
+
+.more,
+.rotated {
+    margin-right: 22px;
+}
+
+.rotated {
+    transform: rotate(180deg);
+}
+
+.active {
+    font-weight: bold;
+}

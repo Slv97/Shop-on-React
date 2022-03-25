@@ -3,6 +3,7 @@ import s from "./Header.module.css";
 import VSF from "../../assets/images/VSF.svg";
 import Category from "../Category/Category";
 import CardBlock from "../CardBlock/CardBlock";
+import { Link } from "react-router-dom";
 
 const Header = ({ onClick }) => {
     return (
@@ -13,7 +14,9 @@ const Header = ({ onClick }) => {
                 </div>
 
                 <div>
-                    <img src={VSF} alt="VSF" />
+                    <Link to="all">
+                        <img src={VSF} alt="VSF" />
+                    </Link>
                 </div>
 
                 <div className={s.cartWrap}>

@@ -2,8 +2,7 @@ import s from "./MyBag.module.css";
 import MyBagProduct from "./MyBagProduct/MyBagProduct";
 
 const MyBag = ({ products, totalPrice, productsLength }) => {
-    console.log("product444", products);
-
+    
     let txt = productsLength < 2 ? "product" : "products";
 
     let txtQuantity =
@@ -43,7 +42,7 @@ const MyBag = ({ products, totalPrice, productsLength }) => {
                         </div>
                     </div>
                 ) : (
-                    "the basket is empty"
+                    "The basket is empty."
                 )}
             </div>
         </div>
