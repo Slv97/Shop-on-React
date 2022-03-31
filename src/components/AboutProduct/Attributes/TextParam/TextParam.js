@@ -1,18 +1,27 @@
+import { useState } from "react";
 import s from "../Attributes.module.css";
 
 const TextParam = ({ textParam }) => {
-    let newTextParam = textParam.items.map((c) => (
-        <div className={s.block} key={c.id}>{c.value}</div>
+    const [activeType, setActiveType] = useState(0);
+    
+    const onSelectType = (index) => {
+        setActiveType(index);
+    };
+    
+    let newTextParam = textParam.items.map((c, index) => (
+        <div
+            onClick={() => onSelectType(index)}
+            className={activeType === index ? s.blockActive : s.block}
+            key={c.id}
+        >
+            {c.value}
+        </div>
     ));
-
-    const handleClick = () => {
-        console.log('att')
-    }
 
     return (
         <div>
             <div className={s.parameter}>{textParam.name}:</div>
-            <div className={s.wrap} onClick={handleClick}>{newTextParam}</div>
+            <div className={s.wrap}>{newTextParam}</div>
         </div>
     );
 };

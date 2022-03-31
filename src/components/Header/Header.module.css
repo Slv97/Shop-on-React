@@ -10,10 +10,13 @@
 }
 
 .wrap,
-.categories,
-.cartWrap {
+.categories {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.cartWrap {
+    display: flex;
+    align-items: center;
+}

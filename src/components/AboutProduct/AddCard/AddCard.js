@@ -1,21 +1,24 @@
-import { useDispatch } from "react-redux";
-import { setCurrentAboutProduct } from "../../../redux/aboutProduct/reducer";
+import Btn from "../../Btn/Btn";
 
-const AddCard = ({ product }) => {
-    const dispatch = useDispatch();
-    console.log("product", product);
+import s from "./AddCard.module.css"
 
-    const handleClick = () => {
-        dispatch(setCurrentAboutProduct(product));
-        console.log('cl', product)
-    };
+
+const AddCard = ({imgObj, priceObj, nameObj,brandObj, onClickAddItem }) => {
+    console.log('nameObj', priceObj)
+
+    const onAddItem = () => {
+        const obj = {
+            nameObj,
+            brandObj,
+            imgObj,
+            priceObj
+        }
+        onClickAddItem(obj)
+    }
 
     return (
-        <div>
-            <div onClick={handleClick}>
-                add to cart
-            </div>           
-        </div>
+        <Btn onClick={onAddItem} text="add to cart" size={s.btnMiddle} />
+                       
     );
 };
 

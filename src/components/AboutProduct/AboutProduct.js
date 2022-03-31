@@ -1,11 +1,13 @@
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setItemInCartWithAttributes } from "../../redux/cart/reducer";
+
 import Preloader from "../Preloader/Preloader";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
 
 import { useQuery } from "@apollo/client";
 import { GET_ABOUT_PRODUCT } from "./queriesAboutProduct";
 
-// import Btn from "../Btn/Btn";
 // import Size from "./Size/Size";
 import Gallery from "./Gallery/Gallery";
 import Attributes from "./Attributes/Attributes";
@@ -13,12 +15,13 @@ import AddCard from "./AddCard/AddCard";
 import s from "./AboutProduct.module.css";
 
 const AboutProduct = () => {
-    const { id } = useParams();
 
+    const dispatch = useDispatch();
+
+    const { id } = useParams();
     const { loading, error, data } = useQuery(GET_ABOUT_PRODUCT, {
         variables: { id: id },
     });
-
     if (loading) return <Preloader />;
     if (error) return <NotFoundPage />;
 
@@ -27,6 +30,12 @@ const AboutProduct = () => {
     }
 
     console.log("data", data.product);
+
+    const handleAddItemInCart = (obj) => {
+        console.log("12113", obj);
+        dispatch(setItemInCartWithAttributes(obj));
+    };
+
 
     return (
         <>
@@ -50,7 +59,14 @@ const AboutProduct = () => {
                         </div>
                     </div>
 
-                    <AddCard product={data.product} />
+                    <AddCard
+                        nameObj={data.product.name}
+                        brandObj={data.product.brand}
+                        priceObj={data.product.prices[0].amount}
+                        imgObj={data.product.gallery[0]}
+                        
+                        onClickAddItem={handleAddItemInCart}
+                    />
 
                     <div
                         className={s.description}

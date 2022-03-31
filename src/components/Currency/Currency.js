@@ -2,11 +2,11 @@ import React, { useRef, useState } from "react";
 import s from "./Currency.module.css";
 import Vector from "../../assets/images/Vector.svg";
 
-export default function Currency({ items }) {
+const Currency = ({ items }) => {
     const [visibleCurrency, setVisibleCurrency] = useState(false);
     const [activeItem, setActiveItem] = useState(0)
     const currencyRef = useRef();
-    const activeLabel = items[activeItem]
+    const activeLabel = items[activeItem].symbol;
 
     const toggleVisibleCurrency = () => {
         setVisibleCurrency(!visibleCurrency);
@@ -20,32 +20,49 @@ export default function Currency({ items }) {
 
     const onSelectItem = (index) => {
         setActiveItem(index)
-        setVisibleCurrency(false)
-    }
+        setVisibleCurrency(false);
+    };
 
     React.useEffect(() => {
         document.body.addEventListener("click", handleOutsideClick);
     }, []);
 
     return (
-        <div className={s.wrap} ref={currencyRef} onClick={toggleVisibleCurrency}>
-            <span className={s.currency}>{activeLabel}</span>
-            <span className={s.more} >
-                <img className={visibleCurrency ? s.rotated : ''} src={Vector} alt="Vector" />
-            </span>
+        <div
+            className={s.wrap}
+            ref={currencyRef}
+            onClick={toggleVisibleCurrency}
+        >
+            <div className={s.currencyWrap}>
+                <span className={s.currency}>{activeLabel}</span>
+                <span className={s.more}>
+                    <img
+                        className={visibleCurrency ? s.rotated : ""}
+                        src={Vector}
+                        alt="Vector"
+                    />
+                </span>
+            </div>
 
             {visibleCurrency && (
-                <div>
-                    <ul>
-                        {items &&
-                            items.map((name, index) => (
-                                <li onClick={() => onSelectItem(index)}
-                                className={activeItem === index ? s.active : null}
-                                key={`${name}_${index}`}>{name}</li>
-                            ))}
-                    </ul>
-                </div>
+                <ul className={s.list}>
+                    {items &&
+                        items.map((item, index) => (
+                            <li
+                                onClick={() => onSelectItem(index)}
+                                className={
+                                    activeItem === index ? s.active : s.item
+                                }
+                                key={`${item.label}_${index}`}
+                            >
+                                {item.symbol} {item.label}
+                            </li>
+                        ))}
+                </ul>
             )}
         </div>
     );
 }
+
+
+export default Currency

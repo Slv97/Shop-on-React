@@ -1,7 +1,7 @@
 import Color from "./Color/Color"
 import TextParam from "./TextParam/TextParam";
 
-const Attributes = ({ attributes }) => {
+const Attributes = ({ attributes, onClickAddType }) => {
 
     let textAttribut = attributes.filter((element) => element.type === "text");
     

@@ -10,7 +10,7 @@
 
 .content {
     width: 325px;
-    padding: 8px 16px;
+    padding: 8px 16px 20px 16px;
     background: #fff;
     position: absolute;
     right: 10%;
@@ -45,4 +45,29 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 160%;
+}
+
+.btnWrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btnSmall,
+.btnSmallBlack {
+    font-size: 14px;
+    padding: 13px 20px;
+    width: 140px;
+}
+
+.btnSmallBlack {
+    color: #1D1F22;
+    background-color: #fff;
+    border: 2px solid #1D1F22;
+}
+
+.btnSmallBlack:hover {
+    background: #1D1F22;
+    color: #fff;
+    border: 2px solid #1D1F22;
 }

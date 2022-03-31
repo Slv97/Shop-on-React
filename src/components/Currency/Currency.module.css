@@ -1,5 +1,11 @@
 .wrap {
     cursor: pointer;
+    position: relative;
+    margin-bottom: 8px;
+    width: 44px;
+}
+
+.currencyWrap {
 }
 
 .currency {
@@ -11,11 +17,32 @@
 
 .more,
 .rotated {
-    margin-right: 22px;
+    /* margin-right: 22px; */
 }
 
 .rotated {
     transform: rotate(180deg);
+}
+
+.list {
+    position: absolute;
+    width: 114px;
+    margin-top: 20px;
+    animation: move 1s linear normal;
+}
+@keyframes move {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.item,
+.active {
+    list-style-type: none;
+    margin-bottom: 21px;
 }
 
 .active {
